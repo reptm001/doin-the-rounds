@@ -12,7 +12,7 @@ using UnityEditor;
 public class Example
 {
     // Creates a new menu item 'Examples > Create Prefab' in the main menu.
-    [MenuItem("Examples/Create Prefab")]
+    [MenuItem("Tools/Create Prefab")]
     static void CreatePrefab()
     {
         // Keep track of the currently selected GameObject(s)

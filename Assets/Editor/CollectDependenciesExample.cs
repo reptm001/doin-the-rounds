@@ -6,7 +6,7 @@ public class CollectDependenciesExample : EditorWindow
     static GameObject obj = null;
 
 
-    [MenuItem("Example/Collect Dependencies")]
+    [MenuItem("Tools/Collect Dependencies")]
     static void Init()
     {
         // Get existing open window or if none, make a new one:
