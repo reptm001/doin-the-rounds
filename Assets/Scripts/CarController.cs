@@ -9,6 +9,8 @@ public class CarController : MonoBehaviour
     public float maxMotorTorque; // maximum torque the motor can apply to wheel
     public float maxSteeringAngle; // maximum steer angle the wheel can have
 
+    public List<GameObject> brakeLights;
+
     // finds the corresponding visual wheel
     // correctly applies the transform
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
@@ -32,6 +34,9 @@ public class CarController : MonoBehaviour
     {
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+
+        if (motor < 0) foreach (GameObject brakeLight in brakeLights) brakeLight.SetActive(true);
+        else foreach (GameObject brakeLight in brakeLights) brakeLight.SetActive(false);
 
         foreach (AxleInfo axleInfo in axleInfos)
         {
